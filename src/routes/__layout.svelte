@@ -22,7 +22,7 @@
         <NavbarTitle content={titleVar} slot="title" on:click={ () => isShown = !isShown } />
         <h3 slot="path" class="text-primary-dark-10">{pathVar}</h3>
     </Navbar>
-    <div class="h-full {isShown ? "flex" : "hidden"}">
+    <div class="h-full {isShown ? "md:flex absolute" : "hidden"}">
         <SideHierarchy>
             
         </SideHierarchy>
