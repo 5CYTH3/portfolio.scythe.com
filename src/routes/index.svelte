@@ -3,6 +3,7 @@
 
     import { onMount } from "svelte";
     onMount(() => {
-        title.set("explorer");
+        title.set("Explorer");
     });
 </script>
+

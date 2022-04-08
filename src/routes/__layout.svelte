@@ -3,20 +3,29 @@
     import { dark, path, title } from "$lib/functions/store";
     import Navbar from "$lib/components/Navbar/Navbar.svelte";
     import NavbarTitle from "$lib/components/Navbar/NavbarTitle.svelte";
+    import SideHierarchy from "$lib/components/Sidebar/SideHierarchy.svelte";
 
     let darkVar: boolean;
     let titleVar: string;
     let pathVar: string;
+    let isShown: boolean = true;
 
     dark.subscribe((val) => (darkVar = val));
     title.subscribe((val) => (titleVar = val));
     path.subscribe((val) => (pathVar = val));
 </script>
 
-<main class={darkVar ? "dark" : ""}>
+<svelte:body class="max-h-screen"></svelte:body>
+
+<main class="h-screen lg:overflow-hidden {darkVar ? "dark" : ""}">
     <Navbar>
-        <NavbarTitle content={titleVar} slot="title" />
-        <h3 slot="path">{pathVar}</h3>
+        <NavbarTitle content={titleVar} slot="title" on:click={ () => isShown = !isShown } />
+        <h3 slot="path" class="text-primary-dark-10">{pathVar}</h3>
     </Navbar>
-    <slot />
+    <div class="h-full {isShown ? "flex" : "hidden"}">
+        <SideHierarchy>
+            
+        </SideHierarchy>
+        <slot />
+    </div>
 </main>
