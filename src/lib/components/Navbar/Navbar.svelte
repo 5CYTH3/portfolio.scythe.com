@@ -1,4 +1,6 @@
-<nav class="dark:bg-primary-dark-100 h-16 w-full flex justify-between items-center">
+<nav
+    class="dark:bg-primary-dark-100 h-16 w-full flex justify-between items-center"
+>
     <div>
         <img src="" alt="" />
         <slot name="title" />
