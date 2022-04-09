@@ -6,33 +6,42 @@
     import SideHierarchy from "$lib/components/Sidebar/SideHierarchy.svelte";
     import SideCategory from "$lib/components/Sidebar/SideCategory.svelte";
     import SideFile from "$lib/components/Sidebar/SideFile.svelte";
+    import { onMount } from "svelte";
 
-    let darkVar: boolean;
-    let titleVar: string;
-    let pathVar: string;
     let isHidden: boolean = true;
 
-    dark.subscribe((val) => (darkVar = val));
-    title.subscribe((val) => (titleVar = val));
-    path.subscribe((val) => (pathVar = val));
+    onMount(() => {
+        document.addEventListener("keydown", (e) => {
+            let key = e.key;
+            let isCtrlPressed = e.ctrlKey;
+
+            if (key === "k" && isCtrlPressed) {
+                alert("Ctrl + k");
+            } else if (key == "Control") {
+                e.preventDefault();
+            }
+        });
+    });
 </script>
 
-<main class="h-screen md:overflow-hidden {darkVar ? 'dark' : ''}">
+<main class="h-screen md:overflow-hidden {$dark ? 'dark' : ''}">
     <Navbar>
         <NavbarTitle
-            content={titleVar}
+            content={$title}
             slot="title"
             on:click={() => (isHidden = !isHidden)}
         />
-        <h3 slot="path" class="text-primary-dark-10">{pathVar}</h3>
+        <h3 slot="path" class="text-primary-dark-10">{$path}</h3>
         <div>
             <img src="" alt="" />
             <img src="" alt="" />
             <img src="" alt="" />
         </div>
     </Navbar>
-    <div class="h-full flex flex-row {isHidden ? 'hidden' : ''}">
-        <SideHierarchy>
+    <div class="h-full flex-row flex">
+        <SideHierarchy
+            class="{isHidden ? 'hidden' : 'md:block'} shrink-0 hidden"
+        >
             <SideCategory>
                 <SideFile />
             </SideCategory>

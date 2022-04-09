@@ -2,8 +2,6 @@
     import { dark } from "$lib/functions/store";
 
     let isOpen: boolean = true;
-    let darkVar: boolean;
-    dark.subscribe((val) => (darkVar = val));
 </script>
 
 <div>
@@ -21,7 +19,7 @@
             >
                 <path
                     d="M12 15.713L18.01 9.70299L16.597 8.28799L12 12.888L7.40399 8.28799L5.98999 9.70199L12 15.713Z"
-                    fill={darkVar ? "#FFFFFF" : "#2E3A59"}
+                    fill={$dark ? "#FFFFFF" : "#2E3A59"}
                 />
             </svg>
         {:else}
@@ -34,7 +32,7 @@
             >
                 <path
                     d="M15.7131 12L9.70209 5.99001L8.28809 7.40401L12.8881 12.004L8.28809 16.597L9.70209 18.011L15.7131 12Z"
-                    fill={darkVar ? "#FFFFFF" : "#2E3A59"}
+                    fill={$dark ? "#FFFFFF" : "#2E3A59"}
                 />
             </svg>
         {/if}
