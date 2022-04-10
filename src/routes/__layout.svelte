@@ -24,7 +24,7 @@
     });
 </script>
 
-<main class="h-screen md:overflow-hidden {$dark ? 'dark' : ''}">
+<main class="sm:h-screen {$dark ? 'dark' : ''}">
     <Navbar>
         <NavbarTitle
             content={$title}
@@ -38,12 +38,13 @@
             <img src="" alt="" />
         </div>
     </Navbar>
-    <div class="h-full flex-row flex">
+    <div class="h-full flex-row flex md:max-h-[93vh]">
         <SideHierarchy
             class="{isHidden ? 'hidden' : 'md:block'} shrink-0 hidden"
         >
             <SideCategory>
-                <SideFile />
+                <SideFile name="README.md" />
+                <SideFile name="main.go" />
             </SideCategory>
         </SideHierarchy>
         <slot />

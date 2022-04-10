@@ -1,6 +1,7 @@
 <script lang="ts">
     import { dark } from "$lib/functions/store";
     let isOpened: boolean = false;
+    export let name: string;
 </script>
 
 <div
@@ -35,5 +36,5 @@
         </svg>
     {/if}
 
-    <h1 class="dark:text-white ml-1 {isOpened ? '' : ''}">README.md</h1>
+    <h1 class="dark:text-white ml-1 {isOpened ? '' : ''}">{name}</h1>
 </div>
