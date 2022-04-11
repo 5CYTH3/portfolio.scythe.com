@@ -4,8 +4,9 @@
     export let data: string;
 </script>
 
-<div
+<a
     class="transition-all dark:bg-primary-dark-100 flex flex-col items-center justify-center p-4 max-w-[11rem] min-w-[11rem] rounded-xl"
+    href="/{data}"
 >
     <svg
         width="144"
@@ -20,4 +21,4 @@
         />
     </svg>
     <h5 class="dark:text-white text-black">{data}</h5>
-</div>
+</a>

@@ -7,7 +7,7 @@
 <div>
     <div
         on:click={() => (isOpen = !isOpen)}
-        class="flex flex-row  cursor-pointer select-none"
+        class="flex flex-row cursor-pointer select-none"
     >
         {#if isOpen}
             <svg
