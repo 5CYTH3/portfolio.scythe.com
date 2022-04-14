@@ -1,5 +1,6 @@
 <script lang="ts">
     import { dark } from "$lib/functions/store";
+import Text from "../utils/Text.svelte";
     let isOpened: boolean = false;
     export let name: string;
 </script>
@@ -35,6 +36,5 @@
             />
         </svg>
     {/if}
-
-    <h1 class="dark:text-white ml-1 {isOpened ? '' : ''}">{name}</h1>
+    <Text light="text-primary-100" dark="text-white" ext="{isOpened ? '' : ''} ml-1">{name}</Text>
 </div>

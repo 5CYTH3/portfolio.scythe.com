@@ -1,6 +1,7 @@
 <script lang="ts">
     import { dark } from "$lib/functions/store";
     import { createEventDispatcher } from "svelte";
+    import Text from "../utils/Text.svelte";
     export let content: string;
 
     const dispatch = createEventDispatcher();
@@ -21,7 +22,5 @@
             fill={$dark ? "#FFFFFF" : "#2E3A59"}
         />
     </svg>
-    <h4 class="text-white select-none ml-2">
-        {content}
-    </h4>
+    <Text ext="ml-2">{content}</Text>
 </div>

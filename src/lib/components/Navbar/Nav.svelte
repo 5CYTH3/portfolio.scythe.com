@@ -2,6 +2,7 @@
     import Navbar from "./Navbar.svelte";
     import NavbarTitle from "./NavbarTitle.svelte";
     import { path, title } from "$lib/functions/store";
+    import Text from "../utils/Text.svelte";
     export let onClickingEvent;
 </script>
 
@@ -11,7 +12,7 @@
         slot="title"
         on:click={onClickingEvent}
     />
-    <h3 slot="path" class="text-primary-dark-10">{$path}</h3>
+    <Text dark="text-primary-dark-10" slot="path">{$path}</Text>
     <div>
         <img src="" alt="" />
         <img src="" alt="" />
