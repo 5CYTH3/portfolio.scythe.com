@@ -2,7 +2,6 @@
     import Directory from '$lib/components/Index/Directory.svelte';
     import { title } from '$lib/functions/store';
     title.set('Explorer');
-
     let routes = ['projects', 'whoami', 'b_chain', 'skills'];
 </script>
 

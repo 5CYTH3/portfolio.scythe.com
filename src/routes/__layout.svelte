@@ -3,11 +3,12 @@
 
     import { dark } from '$lib/functions/store';
     import { onMount } from 'svelte';
-    import NavigationDialog from '$lib/components/Dialogs/NavigationDialog.svelte';
 
     import Side from '$lib/components/Sidebar/Side.svelte';
+    import NavigationDialog from '$lib/components/Dialogs/NavigationDialog.svelte';
     import Nav from '$lib/components/Navbar/Nav.svelte';
 
+    let routes = ['projects', 'whoami', 'b_chain', 'skills'];
     let isHidden: boolean = true;
     let isNavigationDialogShown: boolean = false;
 
@@ -27,7 +28,10 @@
 
 <main class="sm:h-screen {$dark ? 'dark' : ''}">
     {#if isNavigationDialogShown}
-        <NavigationDialog onClose={() => (isNavigationDialogShown = false)} />
+        <NavigationDialog
+            onClose={() => (isNavigationDialogShown = false)}
+            {routes}
+        />
     {/if}
     <Nav onClickingEvent={() => (isHidden = !isHidden)} />
     <div class="h-full flex-row flex md:max-h-[93vh]">

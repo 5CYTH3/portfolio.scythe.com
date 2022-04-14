@@ -1,6 +1,10 @@
 <script lang="ts">
+    import { prevent_default } from 'svelte/internal';
     import { fade, slide } from 'svelte/transition';
+    import NavigationDialogResult from './NavigationDialogResult.svelte';
     export let onClose: any;
+    export let routes: string[];
+    let textController: string;
 </script>
 
 <div
@@ -37,9 +41,21 @@
                 <input
                     name="search"
                     type="text"
+                    bind:value={textController}
                     class="mt-2 w-full h-12 pl-4 rounded-lg shadow-xl border-primary-dark-60 border border-solid bg-primary-dark-90 text-white"
                 />
             </div>
+            {#each routes as e}
+                <div
+                    class="absolute top-36 flex flex-col justify-center items-center w-72"
+                >
+                    {#if e.includes(textController)}
+                        <NavigationDialogResult routeName={e} />
+                    {:else if textController == ''}
+                        <div />
+                    {/if}
+                </div>
+            {/each}
         </div>
     </div>
 </div>
