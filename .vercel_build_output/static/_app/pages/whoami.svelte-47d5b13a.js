@@ -1,0 +1,1 @@
+import{S as e,i as o,s as a}from"../chunks/index-8d015e40.js";import{t as n}from"../chunks/store-9ca3b9b3.js";import"../chunks/index-dc17940a.js";function i(t){return n.set("Who am I?"),[]}class u extends e{constructor(s){super(),o(this,s,i,null,a,{})}}export{u as default};
