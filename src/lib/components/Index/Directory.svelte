@@ -1,6 +1,6 @@
 <script lang="ts">
     import { dark } from '$lib/functions/store';
-
+    import Text from '$lib/components/utils/Text.svelte';
     export let data: string;
 </script>
 
@@ -20,5 +20,5 @@
             fill={$dark ? '#ADADAD' : '#2E3A59'}
         />
     </svg>
-    <h5 class="dark:text-white text-black">{data}</h5>
+    <Text>{data}</Text>
 </a>
