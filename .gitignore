@@ -1,0 +1,15 @@
+.DS_Store
+**/*/node_modules
+client/.svelte-kit
+client/package
+**/*/.env
+**/*/.env.*
+!.env.example
+
+**/*/coverage
+**/*/coverage.json
+**/*/typechain
+
+#Hardhat files
+**/*/cache
+**/*/artifacts
