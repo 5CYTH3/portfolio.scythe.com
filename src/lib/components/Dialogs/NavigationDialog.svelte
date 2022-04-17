@@ -1,11 +1,16 @@
 <script lang="ts">
-    import { prevent_default } from 'svelte/internal';
     import { fade, slide } from 'svelte/transition';
     import NavigationDialogResult from './NavigationDialogResult.svelte';
     export let onClose: any;
     export let routes: string[];
     let textController: string;
 </script>
+
+<!--
+@component
+Component that shows up when CTRL+Y is hit.
+It's the search bar of the website.
+-->
 
 <div
     class="bg-black bg-opacity-50 w-screen h-screen absolute top-0 left-0 flex justify-center"

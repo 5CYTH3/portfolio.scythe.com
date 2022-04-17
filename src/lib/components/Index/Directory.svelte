@@ -4,6 +4,11 @@
     export let data: string;
 </script>
 
+<!--
+@component
+Directory component mounted in the index page.
+-->
+
 <a
     class="transition-all dark:bg-primary-dark-100 flex flex-col items-center justify-center p-4 max-w-[11rem] min-w-[11rem] rounded-xl hover:shadow-md shadow-primary-dark-10"
     href="/{data}"

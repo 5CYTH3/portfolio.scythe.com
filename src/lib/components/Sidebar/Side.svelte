@@ -7,6 +7,11 @@
     export let ifIsHidden;
 </script>
 
+<!--
+@component
+Main component of Sidebar. It groups all the components related to the side bar, including categories, files, etc.
+-->
+
 <SideHierarchy class="shrink-0 hidden {ifIsHidden}">
     <SideCategory>
         <SideFile name="README.md" />

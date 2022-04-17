@@ -1,3 +1,7 @@
+<!--
+@component
+NavbarTitle and Path holder. Main navbar container.
+-->
 <nav
     class="dark:bg-primary-dark-100 h-16 w-full flex justify-between items-center"
 >
