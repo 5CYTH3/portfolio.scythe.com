@@ -22,6 +22,10 @@
             } else if (key == 'Control') {
                 e.preventDefault();
             }
+
+            if (isNavigationDialogShown && e.key == 'Escape') {
+                isNavigationDialogShown = !isNavigationDialogShown;
+            }
         });
     });
 </script>
