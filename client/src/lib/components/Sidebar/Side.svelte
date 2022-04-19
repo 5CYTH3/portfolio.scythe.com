@@ -13,11 +13,11 @@ Main component of Sidebar. It groups all the components related to the side bar,
 -->
 
 <SideHierarchy class="shrink-0 hidden {ifIsHidden}">
-    <SideCategory>
+    <SideCategory name="Recents">
         <SideFile name="README.md" />
         <SideFile name="main.go" />
     </SideCategory>
-    <SideCategory>
+    <SideCategory name="This PC">
         <Button onClick={() => ($dark = !$dark)}
             >{$dark ? 'Light!' : 'Dark!'}</Button
         >

@@ -1,6 +1,7 @@
 <script lang="ts">
     import { dark } from '$lib/functions/store';
 
+    export let name: string;
     let isOpen: boolean = true;
 </script>
 
@@ -41,7 +42,7 @@ Already-styled categories component. It wrap the slots for SideFile and Button.
                 />
             </svg>
         {/if}
-        <h5 class="dark:text-white">Recents</h5>
+        <h5 class="dark:text-white">{name}</h5>
     </div>
     <div class={isOpen ? 'block' : 'hidden'}>
         <slot />
